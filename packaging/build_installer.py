@@ -58,7 +58,8 @@ DefaultDirName={localappdata}\\Programs\\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
-OutputDir=dist
+SourceDir={root_dir}
+OutputDir={root_dir}\\dist
 OutputBaseFilename=PPT-Gen-Studio-Setup
 SetupIconFile=src\\web\\assets\\logo.ico
 Compression=lzma2/ultra64
@@ -169,8 +170,11 @@ def main() -> None:
     print("\n[3/3] Compilando instalador nativo com Inno Setup...")
     iscc_path = find_iscc()
 
-    temp_iss = SCRIPT_DIR / ".setup_temp.iss"
-    temp_iss.write_text(INNO_SETUP_TEMPLATE.replace("{version}", get_version()), encoding="utf-8")
+    temp_iss = ROOT_DIR / ".setup_temp.iss"
+    iss_content = INNO_SETUP_TEMPLATE.replace("{version}", get_version()).replace(
+        "{root_dir}", str(ROOT_DIR)
+    )
+    temp_iss.write_text(iss_content, encoding="utf-8")
 
     try:
         run_command([str(iscc_path), str(temp_iss)], desc="Compilando instalador LZMA2")
