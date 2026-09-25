@@ -56,17 +56,21 @@ Seus arquivos não precisam ser enviados para um servidor ou serviço online par
 
 ## Download
 
-**[Baixar PPT-Gen Studio para Windows](https://github.com/T-Woi/ppt_gen/releases/latest)**
+Baixe o instalador oficial para Windows ou acesse a página de lançamentos para ver o histórico de versões:
 
-O instalador funciona no **Windows 10 e 11 (64 bits)** e não requer a instalação de Python ou qualquer configuração adicional.
+* 📥 **[Download Direto do Instalador (PPT-Gen-Studio-Setup.exe)](https://github.com/T-Woi/ppt_gen/releases/latest/download/PPT-Gen-Studio-Setup.exe)**
+* 📦 **[Página de Releases e Notas de Versão](https://github.com/T-Woi/ppt_gen/releases/latest)**
 
-Depois de baixar:
+O instalador é compatível com **Windows 10 e 11 (64 bits)** e é totalmente autocontido — **não requer a instalação de Python** ou qualquer dependência adicional.
 
-1. Execute o arquivo `PPT-Gen-Studio-Setup.exe`.
-2. Siga as instruções do instalador.
-3. Abra o **PPT-Gen Studio** pelo atalho criado no Menu Iniciar ou na Área de Trabalho.
+### Como instalar:
 
-> Se o Windows mostrar um aviso de segurança, confirme que o arquivo foi baixado do repositório oficial do projeto.
+1. Baixe o instalador executável `PPT-Gen-Studio-Setup.exe`.
+2. Dê um duplo clique para iniciar o assistente de instalação em português.
+3. Conclua os passos na tela (opção de criar atalho na Área de Trabalho e no Menu Iniciar).
+4. Abra o **PPT-Gen Studio** diretamente pelo atalho criado.
+
+> 💡 **Dica de Segurança**: Se o filtro do Windows Defender (SmartScreen) exibir um aviso ao executar o instalador, clique em *"Mais informações"* e em seguida em *"Executar assim mesmo"*. Você também pode conferir a integridade do arquivo através do checksum SHA-256 disponibilizado na página de releases.
 
 ## Licença
 

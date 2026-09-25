@@ -108,11 +108,16 @@ def bump_version(bump_type: str) -> str:
 def main() -> None:
     """Função principal executada via CLI."""
     if len(sys.argv) < 2:
-        print("Uso: python packaging/version_bump.py [patch|minor|major|X.Y.Z]")
+        print("Uso: python packaging/version_bump.py [patch|minor|major|X.Y.Z|--current]")
         print(f"Versão atual: {get_current_version()}")
         sys.exit(1)
 
-    bump_type = sys.argv[1]
+    arg = sys.argv[1]
+    if arg in ("--current", "-c", "current"):
+        print(get_current_version())
+        return
+
+    bump_type = arg
     new_version = bump_version(bump_type)
     print("\nPara criar a tag e publicar o release:")
     print(f"  git commit -am 'chore(release): bump version to {new_version}'")

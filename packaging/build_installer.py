@@ -107,11 +107,16 @@ def find_iscc() -> Path:
     """Localiza o executável do compilador Inno Setup (ISCC.exe)."""
     candidates = [
         shutil.which("iscc"),
+        shutil.which("ISCC"),
         Path(os.environ.get("LOCALAPPDATA", "")) / "Programs" / "Inno Setup 6" / "ISCC.exe",
         Path(os.environ.get("LOCALAPPDATA", "")) / "Programs" / "Inno Setup 7" / "ISCC.exe",
         Path(r"C:\Program Files (x86)\Inno Setup 6\ISCC.exe"),
         Path(r"C:\Program Files\Inno Setup 6\ISCC.exe"),
         Path(r"C:\Program Files\Inno Setup 7\ISCC.exe"),
+        Path(r"C:\ProgramData\chocolatey\bin\iscc.exe"),
+        Path(os.environ.get("ChocolateyInstall", r"C:\ProgramData\chocolatey"))
+        / "bin"
+        / "iscc.exe",
     ]
     for cand in candidates:
         if cand and Path(cand).exists():

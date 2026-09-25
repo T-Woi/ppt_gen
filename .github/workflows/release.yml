@@ -28,6 +28,8 @@ jobs:
       - name: Install Inno Setup 6
         run: |
           choco install innosetup --no-progress
+          echo "C:\Program Files (x86)\Inno Setup 6" >> $env:GITHUB_PATH
+          echo "C:\Program Files\Inno Setup 6" >> $env:GITHUB_PATH
 
       - name: Setup uv
         uses: astral-sh/setup-uv@v5
@@ -73,7 +75,7 @@ jobs:
           elif [ "${{ github.ref_type }}" = "tag" ]; then
             TAG="${{ github.ref_name }}"
           else
-            VERSION=$(uv run python -c "from pathlib import Path; [print(l.split('=')[1].strip().strip('\"\'')) for l in Path('pyproject.toml').read_text(encoding='utf-8').splitlines() if l.strip().startswith('version')]")
+            VERSION=$(uv run python packaging/version_bump.py --current)
             TAG="v${VERSION}"
           fi
           echo "tag=${TAG}" >> $GITHUB_OUTPUT
