@@ -1,0 +1,78 @@
+<!-- ========================================================================= -->
+<!-- ESTADO 1: TELA INICIAL / UPLOAD (Hero + Source Cards + Drag & Drop)        -->
+<!-- ========================================================================= -->
+<main class="page-container" id="uploadView">
+  <div class="hero-section">
+    <h1 class="hero-title">Crie Apresentações PowerPoint em Segundos</h1>
+    <p class="hero-subtitle">Converta pastas de imagens, fotos avulsas ou documentos PDF em apresentações PPTX
+      profissionais, nítidas e perfeitamente dimensionadas.</p>
+  </div>
+
+  <!-- Zona Central de Drop & Ações Rápidas (Astryx Dropzone M3) -->
+  <div class="upload-dropzone" id="dropArea" role="region" aria-label="Área de carregamento de arquivos">
+    <div class="dropzone-glow" aria-hidden="true"></div>
+
+    <div class="dropzone-content">
+      <div class="upload-icon-circle" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="17 8 12 3 7 8"></polyline>
+          <line x1="12" y1="3" x2="12" y2="15"></line>
+        </svg>
+      </div>
+
+      <h2 class="dropzone-headline">Arraste seus arquivos para cá</h2>
+      <p class="dropzone-subheadline">Suporta pastas completas de fotos, arquivos PDF ou seleção múltipla de imagens</p>
+
+      <!-- Cartões de Origem (Grid com Efeito Hover Astryx) -->
+      <div class="source-cards-grid">
+        <!-- Origem: Pasta -->
+        <div class="source-card" id="btnPickFolder" role="button" tabindex="0"
+          title="Selecionar uma pasta com imagens no Windows">
+          <div class="source-card-icon icon-folder">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <strong class="source-card-title">Pasta de Imagens</strong>
+          <span class="source-card-desc">Carrega todas as imagens de um diretório em ordem natural</span>
+        </div>
+
+        <!-- Origem: PDF -->
+        <div class="source-card" id="btnPickPdf" role="button" tabindex="0"
+          title="Selecionar um arquivo PDF para converter páginas em slides">
+          <div class="source-card-icon icon-pdf">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <strong class="source-card-title">Arquivo PDF</strong>
+          <span class="source-card-desc">Converte cada página do documento PDF em um slide independente</span>
+        </div>
+
+        <!-- Origem: Imagens Avulsas -->
+        <div class="source-card" id="btnPickImages" role="button" tabindex="0"
+          title="Selecionar uma ou várias imagens avulsas">
+          <div class="source-card-icon icon-images">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <strong class="source-card-title">Imagens Avulsas</strong>
+          <span class="source-card-desc">Escolha arquivos específicos (PNG, JPG, WEBP, TIFF, BMP)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>

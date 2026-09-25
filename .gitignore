@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+env/
+venv/
+
+# Astral UV
+.uv/
+
+# Testing & Linting
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.bandit/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Local temporary files & outputs
+tmp/
+temp/
+build/
+dist/
+*.log
+*.pptx
+*.iss
+.setup_temp.iss
+!tests/fixtures/*.pptx
+PPT-Gen-Studio-Setup.spec

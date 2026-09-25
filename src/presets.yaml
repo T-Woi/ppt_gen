@@ -1,0 +1,52 @@
+# Presets de Configuração para Apresentações PowerPoint (PPTX)
+# Permite personalização de proporção de tela, margens, cores e resolução
+
+app:
+  name: "PPT-Gen Studio"
+  version: "0.1.0"
+
+defaults:
+  aspect_ratio: "16:9"
+  fit_mode: "fit" # fit, fill, stretch
+  bg_color: "#FFFFFF"
+  pdf_dpi: 200 # Resolução para rasterização de PDF (150, 200, 300)
+  theme: "dark" # dark, light
+
+aspect_ratios:
+  "16:9":
+    name: "Widescreen (16:9)"
+    width_inches: 13.333333
+    height_inches: 7.5
+    description: "Padrão moderno para telas e projetores widescreen"
+  "4:3":
+    name: "Padrão (4:3)"
+    width_inches: 10.0
+    height_inches: 7.5
+    description: "Proporção tradicional para telas clássicas e impressão"
+  "16:10":
+    name: "Widescreen Notebook (16:10)"
+    width_inches: 12.0
+    height_inches: 7.5
+    description: "Proporção comum em telas de MacBooks e laptops modernos"
+  "A4":
+    name: "Folha A4 Paisagem"
+    width_inches: 11.69
+    height_inches: 8.27
+    description: "Dimensão padrão de página A4 para impressão"
+
+fit_modes:
+  fit:
+    label: "Ajustar (Manter Proporção)"
+    description: "Imagem inteira visível, centralizada com margens se necessário"
+  fill:
+    label: "Preencher Slide (Cortar Excesso)"
+    description: "Cobre todo o slide sem barras, recortando bordas se a proporção divergir"
+  stretch:
+    label: "Esticar ao Tamanho Total"
+    description: "Estica a imagem para preencher exatamente o slide (pode distorcer)"
+
+colors:
+  white: "#FFFFFF"
+  black: "#000000"
+  gray: "#1E1E2E"
+  light_gray: "#F5F5F7"

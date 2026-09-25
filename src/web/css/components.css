@@ -1,0 +1,373 @@
+/**
+ * PPT-Gen Studio - Reusable Component Styles
+ * Astryx Components, Material Design 3 Buttons, Badges, Inputs, Segmented Controls & Swatches
+ */
+
+/* --------------------------------------------------------------------------
+   Botões (M3 Button Hierarchy)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--duration-short) var(--ease-standard);
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-sm {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  gap: 0.4rem;
+}
+
+.btn-brand {
+  background: var(--gradient-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.28);
+}
+
+.btn-brand:hover {
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-tonal {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-primary);
+}
+
+.btn-tonal:hover {
+  background: rgba(79, 70, 229, 0.18);
+}
+
+.btn-outlined {
+  background: transparent;
+  border-color: var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface);
+}
+
+.btn-outlined:hover {
+  background: var(--md-sys-color-surface-container);
+  border-color: var(--md-sys-color-outline);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.btn-ghost:hover {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+}
+
+.btn-danger-ghost {
+  background: transparent;
+  color: var(--md-sys-color-danger);
+}
+
+.btn-danger-ghost:hover {
+  background: var(--md-sys-color-danger-container);
+}
+
+.btn-danger {
+  background: var(--md-sys-color-danger);
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+}
+
+.btn-hero {
+  padding: 0.85rem 1.6rem;
+  font-size: 0.96rem;
+  border-radius: var(--radius-xl);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.icon-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  border: none;
+  color: var(--md-sys-color-on-surface-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--duration-short) var(--ease-standard);
+}
+
+.icon-close-btn:hover {
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* --------------------------------------------------------------------------
+   Badges e Tags (Astryx Pill Tags)
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.badge-primary {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Segmented Controls (M3 Switch / Tab Pills)
+   -------------------------------------------------------------------------- */
+.segmented-control {
+  display: flex;
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: 0.25rem;
+  gap: 0.25rem;
+}
+
+.segment-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  transition: all var(--duration-short) var(--ease-standard);
+  user-select: none;
+}
+
+.segment-btn:hover {
+  color: var(--md-sys-color-on-surface);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="dark"] .segment-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.segment-btn.active {
+  background: var(--md-sys-color-surface-container-lowest);
+  color: var(--md-sys-color-primary);
+  box-shadow: var(--elevation-1);
+}
+
+/* --------------------------------------------------------------------------
+   Color Swatches (Branco, Preto, Transparente)
+   -------------------------------------------------------------------------- */
+.color-swatches-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.color-swatch-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.5rem;
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  transition: all var(--duration-short) var(--ease-standard);
+}
+
+.color-swatch-btn:hover {
+  border-color: var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface);
+}
+
+.color-swatch-btn.active {
+  border-color: var(--md-sys-color-primary);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 2px var(--md-sys-color-primary);
+}
+
+.swatch-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.swatch-indicator.checkerboard {
+  background-image: linear-gradient(45deg, #cbd5e1 25%, transparent 25%),
+                    linear-gradient(-45deg, #cbd5e1 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, #cbd5e1 75%),
+                    linear-gradient(-45deg, transparent 75%, #cbd5e1 75%);
+  background-size: 6px 6px;
+  background-position: 0 0, 0 3px, 3px -3px, -3px 0px;
+  background-color: #ffffff;
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+/* --------------------------------------------------------------------------
+   Inputs de Destino e Addons
+   -------------------------------------------------------------------------- */
+.input-addon-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--duration-short) var(--ease-standard);
+}
+
+.input-addon-wrap:focus-within {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+.input-addon-wrap input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.6rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--md-sys-color-on-surface);
+  outline: none;
+}
+
+.input-addon-badge {
+  padding: 0 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface-variant);
+  background: var(--md-sys-color-surface-container-high);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.input-action-wrap {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input-action-wrap input {
+  flex: 1;
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--md-sys-color-on-surface);
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Dropdown Menu (+ Adicionar Mais)
+   -------------------------------------------------------------------------- */
+.dropdown-wrap {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: var(--md-sys-color-surface-container-lowest);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elevation-4);
+  padding: 0.4rem;
+  min-width: 190px;
+  display: none;
+  flex-direction: column;
+  gap: 0.2rem;
+  z-index: 100;
+  animation: popoverEnter var(--duration-short) var(--ease-emphasized);
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+.dropdown-menu button {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.85rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+  transition: background-color var(--duration-short) var(--ease-standard);
+  text-align: left;
+}
+
+.dropdown-menu button:hover {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-primary);
+}
+
+.dropdown-menu button svg {
+  color: var(--md-sys-color-primary);
+}
+
+@keyframes popoverEnter {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

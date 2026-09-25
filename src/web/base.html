@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPT-Gen Studio | Conversor de Imagens e PDF para PowerPoint</title>
+  <meta name="description"
+    content="Converta pastas de imagens, fotos avulsas e documentos PDF em apresentações PowerPoint (PPTX) profissionais de alta resolução.">
+
+  <!-- Ícone e Favicon Oficial do Projeto -->
+  <link rel="icon" type="image/webp" href="assets/logo.webp">
+  <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+  <link rel="apple-touch-icon" href="assets/logo.webp">
+
+  <!-- Google Fonts: Plus Jakarta Sans (UI) & JetBrains Mono (Technical) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Estilos Segmentados por Responsabilidade -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/modals.css">
+</head>
+
+<body>
+
+  <!-- Alerta sutil quando aberto via file:// sem o executável/servidor ativo -->
+  <div id="fileProtocolNotice" class="protocol-alert" style="display:none;" role="alert">
+    <div class="protocol-alert-content">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+        <line x1="12" y1="9" x2="12" y2="13"></line>
+        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+      </svg>
+      <span>Para utilizar o PPT-Gen Studio com suporte a arquivos do sistema, inicie o aplicativo via
+        <strong>PPT-Gen-Studio.exe</strong> ou execute <code>uv run run.py</code>.</span>
+    </div>
+  </div>
+
+  <!-- COMPONENT: header -->
+  <!-- INCLUDE: components/header.html -->
+
+  <!-- PAGE: upload -->
+  <!-- INCLUDE: pages/upload.html -->
+
+  <!-- PAGE: editor -->
+  <!-- INCLUDE: pages/editor.html -->
+
+  <!-- COMPONENT: modals -->
+  <!-- INCLUDE: components/modals.html -->
+
+  <!-- Scripts Segmentados por Camadas -->
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/components/modals.js"></script>
+  <script src="js/components/slide-card.js"></script>
+  <script src="js/components/lightbox.js"></script>
+  <script src="js/pages/upload.js"></script>
+  <script src="js/pages/editor.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

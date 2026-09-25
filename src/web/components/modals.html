@@ -1,0 +1,202 @@
+<!-- ========================================================================= -->
+<!-- MODAL DE PREVIEW / LIGHTBOX EXPANDIDO                                      -->
+<!-- ========================================================================= -->
+<dialog id="previewModal" class="modal-dialog" aria-labelledby="modalSlideTitle">
+  <div class="modal-card lightbox-card">
+    <div class="modal-header">
+      <div class="modal-meta-left">
+        <strong id="modalSlideTitle" class="modal-title">Slide 1</strong>
+        <span id="modalSlideMeta" class="modal-tag">1920 × 1080 • 1.2 MB</span>
+      </div>
+      <div class="modal-actions-right">
+        <span id="modalCounter" class="modal-counter-pill">Slide 1 de 1</span>
+        <button id="btnCloseModal" class="icon-close-btn" aria-label="Fechar visualização ampliada">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-body lightbox-body">
+      <button id="btnPrevSlide" class="lightbox-nav-btn prev" aria-label="Slide anterior" title="Slide anterior (←)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="lightbox-image-stage">
+        <img id="modalImage" src="" alt="Slide ampliado">
+      </div>
+
+      <button id="btnNextSlide" class="lightbox-nav-btn next" aria-label="Próximo slide" title="Próximo slide (→)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <div class="modal-footer lightbox-footer">
+      <span class="lightbox-keyboard-hint">Dica: use as setas <strong>←</strong> e <strong>→</strong> para navegar, <strong>R</strong> para girar, <strong>Esc</strong> para fechar</span>
+      <div class="lightbox-footer-actions">
+        <button id="btnModalRotate" class="btn btn-outlined btn-sm" type="button" title="Girar slide 90°">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6"></path>
+            <path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+          </svg>
+          <span>Girar 90°</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ========================================================================= -->
+<!-- MODAL DE SUCESSO PÓS-EXPORTAÇÃO                                           -->
+<!-- ========================================================================= -->
+<dialog id="successModal" class="modal-dialog" aria-labelledby="successTitle">
+  <div class="modal-card success-card">
+    <div class="success-icon-wrap">
+      <div class="success-icon-pulse"></div>
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="9 12 12 15 17 10"></polyline>
+      </svg>
+    </div>
+
+    <h2 id="successTitle" class="success-title">Apresentação Gerada com Sucesso!</h2>
+    <p class="success-desc">O arquivo PowerPoint foi montado, otimizado e gravado no disco.</p>
+
+    <div class="success-summary-box">
+      <div class="summary-row">
+        <span class="summary-lbl">Arquivo:</span>
+        <strong class="summary-val highlight" id="successFileName">Apresentacao.pptx</strong>
+      </div>
+      <div class="summary-row">
+        <span class="summary-lbl">Destino:</span>
+        <span class="summary-val path" id="successFilePath">C:\...</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-lbl">Slides:</span>
+        <span class="summary-val" id="successSlideCount">0</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-lbl">Tamanho:</span>
+        <span class="summary-val" id="successFileSize">0 KB</span>
+      </div>
+    </div>
+
+    <div class="success-buttons-grid">
+      <button id="btnOpenPresentation" class="btn btn-brand btn-block" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Abrir Apresentação no PowerPoint</span>
+      </button>
+
+      <button id="btnOpenFolder" class="btn btn-outlined btn-block" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span>Abrir Pasta de Destino</span>
+      </button>
+
+      <button id="btnResetToHome" class="btn btn-ghost btn-block" type="button" style="margin-top: 0.25rem;">
+        <span>Criar Nova Apresentação</span>
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<!-- ========================================================================= -->
+<!-- MODAL DE ATALHOS DE TECLADO                                               -->
+<!-- ========================================================================= -->
+<dialog id="shortcutsModal" class="modal-dialog" aria-labelledby="shortcutsTitle">
+  <div class="modal-card shortcuts-card">
+    <div class="modal-header">
+      <div class="modal-title-row">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+          <line x1="6" y1="8" x2="6" y2="8"></line>
+          <line x1="10" y1="8" x2="10" y2="8"></line>
+          <line x1="14" y1="8" x2="14" y2="8"></line>
+          <line x1="18" y1="8" x2="18" y2="8"></line>
+          <line x1="6" y1="12" x2="6" y2="12"></line>
+          <line x1="18" y1="12" x2="18" y2="12"></line>
+          <line x1="10" y1="16" x2="14" y2="16"></line>
+        </svg>
+        <strong id="shortcutsTitle" class="modal-title">Atalhos de Teclado</strong>
+      </div>
+      <button id="btnCloseShortcutsModal" class="icon-close-btn" aria-label="Fechar atalhos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="shortcuts-list">
+      <div class="shortcut-item">
+        <span>Converter para PowerPoint</span>
+        <kbd>Ctrl + Enter</kbd>
+      </div>
+      <div class="shortcut-item">
+        <span>Girar slide em foco 90°</span>
+        <kbd>R</kbd>
+      </div>
+      <div class="shortcut-item">
+        <span>Navegar no Lightbox</span>
+        <kbd>← / →</kbd>
+      </div>
+      <div class="shortcut-item">
+        <span>Fechar modais e menus</span>
+        <kbd>Esc</kbd>
+      </div>
+      <div class="shortcut-item">
+        <span>Alternar tema Claro / Escuro</span>
+        <kbd>Ctrl + T</kbd>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ========================================================================= -->
+<!-- MODAL DE CARREGAMENTO / LOADING (com fundo acinzentado e spinner)         -->
+<!-- ========================================================================= -->
+<dialog id="loadingModal" class="modal-dialog loading-dialog" aria-modal="true" aria-labelledby="loadingTitle">
+  <div class="modal-card loading-card">
+    <div class="loading-spinner-wrap">
+      <div class="loading-spinner-ring"></div>
+    </div>
+    <h3 id="loadingTitle" class="loading-title">Carregando Arquivos...</h3>
+    <p id="loadingMessage" class="loading-desc">Lendo e gerando miniaturas em alta performance. Aguarde um instante.</p>
+  </div>
+</dialog>
+
+<!-- ========================================================================= -->
+<!-- MODAL DE ALERTAS E CONFIRMAÇÕES (Centralizado com Fundo Acinzentado)      -->
+<!-- ========================================================================= -->
+<dialog id="appAlertModal" class="modal-dialog alert-dialog" aria-modal="true" aria-labelledby="alertModalTitle">
+  <div class="modal-card alert-card">
+    <div class="alert-icon-box" id="alertModalIcon">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+    </div>
+    <h3 id="alertModalTitle" class="alert-title">Aviso</h3>
+    <p id="alertModalMessage" class="alert-desc">Mensagem descritiva do alerta.</p>
+    <div class="alert-actions-row" id="alertModalButtons">
+      <button id="alertBtnCancel" class="btn btn-outlined btn-sm" type="button" style="display:none;">Cancelar</button>
+      <button id="alertBtnOk" class="btn btn-brand btn-sm" type="button">Entendido</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- Inputs Ocultos de Arquivo para Fallback no Navegador -->
+<input type="file" id="browserFileInput" multiple accept="image/*,.pdf" style="display:none">
+
+<!-- Container de Toasts Flutuantes -->
+<div id="toastContainer" class="toast-container" aria-live="polite"></div>

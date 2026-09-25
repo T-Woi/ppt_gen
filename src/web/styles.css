@@ -1,0 +1,9 @@
+/**
+ * PPT-Gen Studio - Stylesheet Principal Unificado
+ * Importa os módulos segmentados de estilos (Base, Componentes, Páginas e Modais)
+ */
+
+@import url('css/base.css');
+@import url('css/components.css');
+@import url('css/pages.css');
+@import url('css/modals.css');

@@ -1,0 +1,265 @@
+/**
+ * PPT-Gen Studio - Base Styles & Theme Tokens
+ * Material Design 3 Design Tokens, Variables, Reset, Typography & Header
+ */
+
+:root {
+  /* Paleta Base Light (M3 Elevation & Surface Tokens) */
+  --md-sys-color-primary: #4f46e5;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #e0e7ff;
+  --md-sys-color-on-primary-container: #3730a3;
+
+  --md-sys-color-surface: #f8fafc;
+  --md-sys-color-on-surface: #0f172a;
+  --md-sys-color-surface-variant: #f1f5f9;
+  --md-sys-color-on-surface-variant: #64748b;
+
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #f8fafc;
+  --md-sys-color-surface-container: #f1f5f9;
+  --md-sys-color-surface-container-high: #e2e8f0;
+  --md-sys-color-surface-container-highest: #cbd5e1;
+
+  --md-sys-color-outline: #cbd5e1;
+  --md-sys-color-outline-variant: #e2e8f0;
+
+  --md-sys-color-danger: #ef4444;
+  --md-sys-color-danger-container: #fee2e2;
+  --md-sys-color-on-danger-container: #991b1b;
+
+  --md-sys-color-warning: #f59e0b;
+  --md-sys-color-warning-container: #fef3c7;
+  --md-sys-color-on-warning-container: #92400e;
+
+  --md-sys-color-success: #10b981;
+  --md-sys-color-success-container: #d1fae5;
+  --md-sys-color-on-success-container: #065f46;
+
+  /* Gradientes Dinâmicos Astryx */
+  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --gradient-hero-glow: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.14) 0%, rgba(99, 102, 241, 0) 70%);
+
+  /* Sombras e Elevações M3 */
+  --elevation-1: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --elevation-2: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --elevation-3: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --elevation-4: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --elevation-5: 0 25px 50px -12px rgba(0, 0, 0, 0.18);
+
+  /* Tipografia Google Fonts */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Raios e Curvaturas (Shape Scale M3) */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transições e Curvas Easing Material Design 3 */
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --ease-standard: cubic-bezier(0.2, 0, 0.2, 1);
+  --duration-short: 150ms;
+  --duration-medium: 250ms;
+  --duration-long: 400ms;
+}
+
+/* Modo Escuro (Dark Mode M3) */
+[data-theme="dark"] {
+  --md-sys-color-primary: #818cf8;
+  --md-sys-color-on-primary: #1e1b4b;
+  --md-sys-color-primary-container: #312e81;
+  --md-sys-color-on-primary-container: #e0e7ff;
+
+  --md-sys-color-surface: #090d16;
+  --md-sys-color-surface-variant: #1e293b;
+  --md-sys-color-surface-container-lowest: #0b0f19;
+  --md-sys-color-surface-container-low: #0f172a;
+  --md-sys-color-surface-container: #1e293b;
+  --md-sys-color-surface-container-high: #334155;
+  --md-sys-color-surface-container-highest: #475569;
+
+  --md-sys-color-on-surface: #f8fafc;
+  --md-sys-color-on-surface-variant: #94a3b8;
+  --md-sys-color-outline: #475569;
+  --md-sys-color-outline-variant: #334155;
+
+  --md-sys-color-danger: #f87171;
+  --md-sys-color-danger-container: #450a0a;
+  --md-sys-color-on-danger-container: #fecaca;
+
+  --md-sys-color-warning: #fbbf24;
+  --md-sys-color-warning-container: #78350f;
+  --md-sys-color-on-warning-container: #fef3c7;
+
+  --md-sys-color-success: #34d399;
+  --md-sys-color-success-container: #064e3b;
+  --md-sys-color-on-success-container: #a7f3d0;
+
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+  --gradient-hero-glow: radial-gradient(circle at 50% 0%, rgba(129, 140, 248, 0.16) 0%, rgba(129, 140, 248, 0) 70%);
+
+  --elevation-1: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  --elevation-2: 0 4px 6px -1px rgba(0, 0, 0, 0.45), 0 2px 4px -2px rgba(0, 0, 0, 0.35);
+  --elevation-3: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --elevation-4: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  --elevation-5: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Base Styles
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--duration-medium) var(--ease-standard), color var(--duration-medium) var(--ease-standard);
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Alerta de Protocolo
+   -------------------------------------------------------------------------- */
+.protocol-alert {
+  background: #fef3c7;
+  color: #92400e;
+  border-bottom: 1px solid #fcd34d;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.protocol-alert-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Barra Superior (Top App Bar) & Logo
+   -------------------------------------------------------------------------- */
+.app-header {
+  height: 60px;
+  background-color: var(--md-sys-color-surface-container-lowest);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  flex-shrink: 0;
+  z-index: 50;
+  transition: background-color var(--duration-medium) var(--ease-standard), border-color var(--duration-medium) var(--ease-standard);
+}
+
+.header-container {
+  height: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  outline: none;
+  border-radius: var(--radius-sm);
+  transition: transform var(--duration-short) var(--ease-emphasized), opacity var(--duration-short) var(--ease-standard);
+}
+
+.brand-link:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.brand-logo-container {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo-img {
+  height: 32px;
+  max-width: 140px;
+  object-fit: contain;
+  border-radius: var(--radius-xs);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.brand-text-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.brand-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--md-sys-color-on-surface);
+}
+
+.brand-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  text-transform: uppercase;
+}
+
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-action-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--duration-short) var(--ease-standard), color var(--duration-short) var(--ease-standard), border-color var(--duration-short) var(--ease-standard);
+}
+
+.icon-action-btn:hover {
+  background-color: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+}
+
+.sun-icon { display: block; }
+.moon-icon { display: none; }
+[data-theme="dark"] .sun-icon { display: none; }
+[data-theme="dark"] .moon-icon { display: block; }

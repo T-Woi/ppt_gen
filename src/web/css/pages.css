@@ -1,0 +1,661 @@
+/**
+ * PPT-Gen Studio - Page & Workspace Layout Styles
+ * Layout for Upload View (Hero, Dropzone) and Editor Workspace (Slides Column, Grid, Aside)
+ */
+
+/* --------------------------------------------------------------------------
+   ESTADO 1: TELA INICIAL (Hero + Upload Dropzone)
+   -------------------------------------------------------------------------- */
+.page-container {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  overflow-y: auto;
+}
+
+.hero-section {
+  text-align: center;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--elevation-1);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: var(--md-sys-color-on-surface);
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--md-sys-color-on-surface-variant);
+  max-width: 680px;
+  line-height: 1.55;
+}
+
+/* Dropzone Central */
+.upload-dropzone {
+  width: 100%;
+  max-width: 960px;
+  background: var(--md-sys-color-surface-container-lowest);
+  border: 2px dashed var(--md-sys-color-outline);
+  border-radius: var(--radius-2xl);
+  padding: 2.5rem 2.25rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--elevation-2);
+  transition: all var(--duration-medium) var(--ease-emphasized);
+}
+
+.upload-dropzone:hover,
+.upload-dropzone.drag-active {
+  border-color: var(--md-sys-color-primary);
+  background: var(--md-sys-color-surface-container-low);
+  box-shadow: 0 12px 36px rgba(79, 70, 229, 0.14);
+  transform: translateY(-2px);
+}
+
+.dropzone-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: var(--gradient-hero-glow);
+  pointer-events: none;
+}
+
+.dropzone-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.upload-icon-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: var(--radius-full);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: transform var(--duration-short) var(--ease-emphasized);
+}
+
+.upload-dropzone:hover .upload-icon-circle {
+  transform: scale(1.08) translateY(-2px);
+}
+
+.dropzone-headline {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.dropzone-subheadline {
+  font-size: 0.92rem;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-bottom: 1.75rem;
+}
+
+/* Grade de Cartões de Origem (Astryx Cards) */
+.source-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  margin-bottom: 1.75rem;
+}
+
+.source-card {
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--duration-medium) var(--ease-emphasized);
+}
+
+.source-card:hover {
+  background: var(--md-sys-color-surface-container-high);
+  border-color: var(--md-sys-color-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--elevation-3);
+}
+
+.source-card:active {
+  transform: scale(0.98);
+}
+
+.source-card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  transition: transform var(--duration-short) var(--ease-emphasized);
+}
+
+.source-card:hover .source-card-icon {
+  transform: scale(1.1);
+}
+
+.icon-folder { background: #e0e7ff; color: #4338ca; }
+.icon-pdf { background: #fee2e2; color: #b91c1c; }
+.icon-images { background: #fef3c7; color: #b45309; }
+
+[data-theme="dark"] .icon-folder { background: #312e81; color: #a5b4fc; }
+[data-theme="dark"] .icon-pdf { background: #7f1d1d; color: #fca5a5; }
+[data-theme="dark"] .icon-images { background: #78350f; color: #fcd34d; }
+
+.source-card-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: 0.35rem;
+}
+
+.source-card-desc {
+  font-size: 0.78rem;
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 1.4;
+  margin-bottom: 0.85rem;
+}
+
+.source-card-action {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--md-sys-color-primary);
+  margin-top: auto;
+}
+
+
+/* Destaques de Recursos */
+.features-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 960px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: var(--md-sys-color-surface-container-low);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1.15rem;
+}
+
+.feature-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.feature-text strong {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+}
+
+.feature-text span {
+  font-size: 0.76rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* --------------------------------------------------------------------------
+   ESTADO 2: WORKSPACE E EDITOR DE SLIDES (FIXO + SCROLL APENAS NA GRADE)
+   -------------------------------------------------------------------------- */
+.editor-container {
+  flex: 1;
+  height: calc(100vh - 60px);
+  max-width: 1560px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.editor-layout {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 1.5rem;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* Coluna dos Slides - Estrutura Fixa com Scroll Apenas na Grade */
+.slides-column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Barra de Ações Superior do Workspace - FIXA */
+.editor-toolbar {
+  flex-shrink: 0;
+  background: var(--md-sys-color-surface-container-lowest);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-xl);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: var(--elevation-1);
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.source-info-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  color: var(--md-sys-color-on-surface-variant);
+  max-width: 380px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--md-sys-color-outline-variant);
+}
+
+/* Dica de Organização Drag & Drop - FIXA */
+.workspace-tip-banner {
+  flex-shrink: 0;
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 0.95rem;
+  font-size: 0.82rem;
+  color: var(--md-sys-color-on-surface-variant);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.workspace-tip-banner svg {
+  color: var(--md-sys-color-primary);
+  flex-shrink: 0;
+}
+
+/* Grade de Cards de Slides - COM SCROLL APENAS AQUI E ALINHAMENTO START */
+.slides-grid {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-auto-rows: max-content;
+  align-content: start;
+  align-items: start;
+  gap: 1.25rem;
+  padding: 0.25rem 0.5rem 2.5rem 0.15rem;
+}
+
+/* Custom Scrollbars */
+.slides-grid::-webkit-scrollbar,
+.settings-sidebar::-webkit-scrollbar {
+  width: 7px;
+}
+.slides-grid::-webkit-scrollbar-track,
+.settings-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slides-grid::-webkit-scrollbar-thumb,
+.settings-sidebar::-webkit-scrollbar-thumb {
+  background: var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-full);
+}
+.slides-grid::-webkit-scrollbar-thumb:hover,
+.settings-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--md-sys-color-outline);
+}
+
+/* Slide Card Individual */
+.slide-card {
+  background: var(--md-sys-color-surface-container-lowest);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--elevation-1);
+  cursor: grab;
+  user-select: none;
+  transition: transform var(--duration-short) var(--ease-emphasized), box-shadow var(--duration-short) var(--ease-emphasized), border-color var(--duration-short) var(--ease-standard);
+  position: relative;
+  height: auto;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.slide-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--elevation-3);
+  border-color: var(--md-sys-color-primary);
+}
+
+.slide-card:active {
+  cursor: grabbing;
+}
+
+.slide-card.dragging {
+  opacity: 0.45;
+  transform: scale(0.96) rotate(2deg);
+  box-shadow: var(--elevation-5);
+  border: 2px dashed var(--md-sys-color-primary);
+}
+
+.slide-card.drag-over {
+  border: 2px solid var(--md-sys-color-primary);
+  background: var(--md-sys-color-primary-container);
+  transform: scale(1.02);
+}
+
+.card-preview-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0b0f19;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-preview-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--duration-medium) var(--ease-standard);
+}
+
+.slide-card:hover .card-preview-wrap img {
+  transform: scale(1.03);
+}
+
+.card-index-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(15, 23, 42, 0.8);
+  color: #ffffff;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-format-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: rgba(15, 23, 42, 0.8);
+  color: #cbd5e1;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.card-hover-actions {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-short) var(--ease-standard);
+  z-index: 3;
+}
+
+.slide-card:hover .card-hover-actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.card-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f172a;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform var(--duration-short) var(--ease-emphasized), background-color var(--duration-short) var(--ease-standard);
+}
+
+.card-action-btn:hover {
+  transform: scale(1.12);
+  background: #ffffff;
+}
+
+.card-action-btn.btn-trash:hover {
+  background: var(--md-sys-color-danger);
+  color: #ffffff;
+}
+
+.card-caption {
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: var(--md-sys-color-surface-container-lowest);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  flex-shrink: 0;
+}
+
+.card-title-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-dimensions-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--md-sys-color-on-surface-variant);
+  background: var(--md-sys-color-surface-container);
+  padding: 0.15rem 0.35rem;
+  border-radius: var(--radius-xs);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Painel Lateral de Configurações (Settings Aside)
+   -------------------------------------------------------------------------- */
+.settings-sidebar {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.sidebar-surface {
+  background: var(--md-sys-color-surface-container-lowest);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-2xl);
+  padding: 1.5rem 1.35rem;
+  box-shadow: var(--elevation-2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.sidebar-header {
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  padding-bottom: 0.85rem;
+}
+
+.sidebar-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--md-sys-color-primary);
+  margin-bottom: 0.2rem;
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--md-sys-color-on-surface);
+}
+
+.sidebar-subtitle {
+  font-size: 0.8rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.setting-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.setting-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.export-cta-wrap {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.cta-arrow {
+  font-size: 1.15rem;
+  transition: transform var(--duration-short) var(--ease-emphasized);
+}
+
+.btn-hero:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+.cta-shortcut-hint {
+  font-size: 0.76rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.btn-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
