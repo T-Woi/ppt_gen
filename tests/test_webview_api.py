@@ -1,8 +1,9 @@
 """Testes unitários completos para a ponte em memória PyWebViewApi."""
 
+import os
 import urllib.parse
 from pathlib import Path
-from unittest.mock import AsyncMock, patch
+from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
@@ -268,3 +269,31 @@ def test_webview_api_open_file_edge_cases(
         res = api.open_file(str(test_images_dir))
         assert res["opened"] is True
         mock_sub.assert_called_once()
+
+    # 4. Execução no Windows (com startfile com sucesso)
+    monkeypatch.setattr("platform.system", lambda: "Windows")
+    mock_startfile = MagicMock()
+    monkeypatch.setattr("os.startfile", mock_startfile, raising=False)
+    res = api.open_file(str(test_images_dir))
+    assert res["opened"] is True
+    mock_startfile.assert_called_once()
+
+    # 5. Execução no Windows (com startfile falhando -> fallback explorer)
+    mock_failing_startfile = MagicMock(side_effect=OSError("Erro ao iniciar"))
+    monkeypatch.setattr("os.startfile", mock_failing_startfile, raising=False)
+    with patch("subprocess.run") as mock_sub:
+        res = api.open_file(str(test_images_dir))
+        assert res["opened"] is True
+        mock_sub.assert_called_once()
+
+    # 6. Execução no Windows (sem startfile -> fallback explorer)
+    if hasattr(os, "startfile"):
+        monkeypatch.delattr("os.startfile", raising=False)
+    with patch("subprocess.run") as mock_sub:
+        res = api.open_file(str(test_images_dir))
+        assert res["opened"] is True
+        mock_sub.assert_called_once()
+
+    # 7. Arquivo inexistente
+    with pytest.raises(FileNotFoundError):
+        api.open_file(str(test_images_dir / "arquivo_totalmente_inexistente.xyz"))

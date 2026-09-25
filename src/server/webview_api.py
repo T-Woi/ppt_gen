@@ -331,9 +331,13 @@ class PyWebViewApi:
 
         resolved = str(target.resolve())
         if platform.system() == "Windows":
-            try:
-                os.startfile(resolved)  # nosec B606
-            except Exception:
+            startfile = getattr(os, "startfile", None)
+            if callable(startfile):
+                try:
+                    startfile(resolved)
+                except Exception:
+                    subprocess.run(["explorer", resolved], check=False)
+            else:
                 subprocess.run(["explorer", resolved], check=False)
         elif platform.system() == "Darwin":
             subprocess.run(["open", resolved], check=True)  # nosec B603 B607

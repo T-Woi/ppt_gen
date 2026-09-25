@@ -1,0 +1,13 @@
+# Normalização de finais de linha para garantir paridade entre Windows e Linux no CI/CD
+* text=auto eol=lf
+
+# Arquivos binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.pptx binary
+*.exe binary
